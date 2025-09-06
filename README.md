@@ -2,6 +2,9 @@
 MdePkg include folder for x86-32 and x86-64 architecture
 
 ## Revision history
+### 20250906 / edk2-stable202508
+* update to MdePkg\Include 
+
 ### 20250720 / edk2-stable202505
 * update to MdePkg\Include 
 
