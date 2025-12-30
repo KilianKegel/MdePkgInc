@@ -77,26 +77,6 @@ typedef struct {
 
 #endif // defined (MDE_CPU_EBC)
 
-#if defined (MDE_CPU_ARM)
-
-typedef struct {
-  UINT32    R3;  ///< A copy of R13.
-  UINT32    R4;
-  UINT32    R5;
-  UINT32    R6;
-  UINT32    R7;
-  UINT32    R8;
-  UINT32    R9;
-  UINT32    R10;
-  UINT32    R11;
-  UINT32    R12;
-  UINT32    R14;
-} BASE_LIBRARY_JUMP_BUFFER;
-
-#define BASE_LIBRARY_JUMP_BUFFER_ALIGNMENT  4
-
-#endif // defined (MDE_CPU_ARM)
-
 #if defined (MDE_CPU_AARCH64)
 typedef struct {
   // GP regs
@@ -5413,6 +5393,18 @@ TdVmCall (
 BOOLEAN
 EFIAPI
 TdIsEnabled (
+  VOID
+  );
+
+/**
+  Probe if running as some kind of SEV guest.
+
+  @return FALSE   Not running as a guest under any kind of SEV
+  @return TRUE    Running as a guest under any kind of SEV
+**/
+BOOLEAN
+EFIAPI
+SevGuestIsEnabled (
   VOID
   );
 
